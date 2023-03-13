@@ -8,6 +8,7 @@ class BookingRepository{
         try {
             const booking = await Booking.create(data);
             return booking; 
+            
         } catch (error) {
             if(error.name =='SequelizeValidationError'){
                 throw new ValidationError(error)
